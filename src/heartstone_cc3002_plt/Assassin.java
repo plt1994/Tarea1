@@ -1,7 +1,13 @@
 package heartstone_cc3002_plt;
 
-public class Assassin extends AbstractCard implements ICard{
-	
+public class Assassin extends AbstractCard{
+	/**
+	 * 
+	 * @param aname 
+	 * @param lp
+	 * @param adamaged
+	 * @param ad
+	 */
 	public Assassin(String aname, double lp, double adamaged, double ad) {
 		super(aname, lp, adamaged, ad);
 	}
@@ -9,12 +15,6 @@ public class Assassin extends AbstractCard implements ICard{
 	@Override
 	public void attack(ICard card) {
 		card.attackAssassin(this);
-		
-	}
-
-	@Override
-	public void attackAssassin(Assassin assassin) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -59,11 +59,14 @@ public class Assassin extends AbstractCard implements ICard{
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * Warlock hurts double to Assassin
+	 */
 	@Override
 	public void attackWarlock(Warlock warlock) {
-		// TODO Auto-generated method stub
+		super.damaged=this.getDR()+2*warlock.getAD();
 		
 	}
+
 
 }

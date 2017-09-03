@@ -3,15 +3,12 @@ package heartstone_cc3002_plt;
 public abstract class AbstractCard implements ICard{
 	private String name;
 	private double lifePoints;
-	private double damaged;
+	protected double damaged;
 	private double attackDamage;
-	/**
-	 * 
-	 * @param aname Card's name
-	 * @param lp Card's life points
-	 * @param adamaged Card's damage received
-	 * @param ad Card's attack damage
-	 */
+	
+	public AbstractCard(String aname,double lp,double ad){
+		this(aname,lp,0,ad);
+	}
 	public AbstractCard(String aname,double lp,double adamaged,double ad){
 		name=aname;
 		lifePoints=lp;
@@ -29,5 +26,42 @@ public abstract class AbstractCard implements ICard{
 	}
 	public double getAD(){
 		return this.attackDamage;
+	}
+	public boolean isAlive(){
+		return this.getLP()>this.getDR();
+	}
+	
+	public void attackAssassin(Assassin assassin) {
+		this.damaged=this.getDR()+assassin.getAD();
+		
+	}
+	public void attackWarlock(Warlock warlock) {
+		this.damaged=this.getDR()+warlock.getAD();
+		
+	}
+	
+	public void attackDruid(Druid druid){
+		this.attackDamage=this.attackDamage+druid.getAD();
+		this.damaged=this.getDR()+0.5*druid.getAD();
+	}
+	public void attackHealer(Healer healer){
+		this.damaged=this.getDR()-0.5*healer.getAD();
+	}
+	public void attackHunter(Hunter hunter){
+		this.damaged=this.getDR()+hunter.getAD();
+	}
+	public void attackKnight(Knight knight){
+		this.damaged=this.getDR()+knight.getAD();
+	}
+	public void attackMage(Mage mage){
+		this.damaged=this.getDR()+mage.getAD();
+	}
+	public void attackPaladin(Paladin paladin){
+		this.attackDamage=this.attackDamage+paladin.getAD()/3;
+		this.damaged=this.getDR()-paladin.getAD()/3;
+	}
+	public void attackShaman(Shaman shaman){
+		this.attackDamage=this.attackDamage-shaman.getAD()/3;
+		this.damaged=this.getDR()+shaman.getAD()/3;
 	}
 }

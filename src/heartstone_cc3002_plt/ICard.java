@@ -11,4 +11,10 @@ public interface ICard {
 	void attackPaladin(Paladin paladin);
 	void attackShaman(Shaman shaman);
 	void attackWarlock(Warlock warlock);
+	String getName();
+	double getLP();
+	double getDR();
+	double getAD();
+	boolean isAlive();
+	
 }
