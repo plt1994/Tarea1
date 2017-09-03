@@ -4,7 +4,7 @@ public abstract class AbstractCard implements ICard{
 	private String name;
 	private double lifePoints;
 	protected double damaged;
-	private double attackDamage;
+	protected double attackDamage;
 	
 	public AbstractCard(String aname,double lp,double ad){
 		this(aname,lp,0,ad);
