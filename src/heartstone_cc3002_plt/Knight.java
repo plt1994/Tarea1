@@ -1,15 +1,27 @@
 package heartstone_cc3002_plt;
-
+/**
+ * Represents a Knight card
+ * @author plt1994
+ *
+ */
 public class Knight extends AbstractCard{
+	/**
+	 * Constructor for Knight
+	 * @param aname card's name
+	 * @param lp card's life points
+	 * @param adamaged card's damage received 
+	 * @param ad card's attack damage
+	 */
+	public Knight(String aname, double lp, double adamaged, double ad) {
+		super(aname, lp, adamaged, ad);
+	}
 	public Knight(double lp, double ad){
 		super("Knight",lp,0,ad);
 	}
 	public Knight(double lp,double adamaged, double ad){
 		super("Knight",lp,adamaged,ad);
 	}
-	public Knight(String aname, double lp, double adamaged, double ad) {
-		super(aname, lp, adamaged, ad);
-	}
+	
 
 
 	@Override
