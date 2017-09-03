@@ -1,8 +1,8 @@
 package heartstone_cc3002_plt;
 
 public interface ICard {
-	void play(ICard card);
-	void attackAssasin(Assassin assassin);
+	void attack(ICard card);
+	void attackAssassin(Assassin assassin);
 	void attackDruid(Druid druid);
 	void attackHealer(Healer healer);
 	void attackHunter(Hunter hunter);
