@@ -24,8 +24,9 @@ public class Healer extends AbstractCard{
 	
 	@Override
 	public void attack(ICard card) {
-		card.attackHealer(this);
-		
+		if(card.isAlive() && this.isAlive()){
+			card.attackHealer(this);
+		}
 	}
 	@Override
 	public void attackAssassin(Assassin assassin) {

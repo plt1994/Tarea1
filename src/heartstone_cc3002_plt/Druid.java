@@ -26,7 +26,9 @@ public class Druid extends AbstractCard{
 
 	@Override
 	public void attack(ICard card) {
-		card.attackDruid(this);
+		if(card.isAlive() && this.isAlive()){
+			card.attackDruid(this);
+		}
 	}
 
 	@Override

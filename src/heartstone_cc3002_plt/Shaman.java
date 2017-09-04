@@ -24,7 +24,9 @@ public class Shaman extends AbstractCard{
 	
 	@Override
 	public void attack(ICard card) {
-		card.attackShaman(this);
+		if(card.isAlive() && this.isAlive()){
+			card.attackShaman(this);
+		}
 		
 	}
 	@Override

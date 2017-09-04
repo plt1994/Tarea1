@@ -25,7 +25,10 @@ public class Warlock extends AbstractCard{
 
 	@Override
 	public void attack(ICard card) {
-		card.attackWarlock(this);
+		if(card.isAlive() && this.isAlive()){
+			card.attackWarlock(this);
+		}
+		
 		
 	}
 	@Override

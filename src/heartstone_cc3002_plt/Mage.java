@@ -24,7 +24,9 @@ public class Mage extends AbstractCard{
 	
 	@Override
 	public void attack(ICard card) {
-		card.attackMage(this);
+		if(card.isAlive() && this.isAlive()){
+			card.attackMage(this);
+		}
 	}
 	@Override
 	public void attackAssassin(Assassin assassin) {

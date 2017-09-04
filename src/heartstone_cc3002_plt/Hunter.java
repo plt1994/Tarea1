@@ -21,12 +21,11 @@ public class Hunter extends AbstractCard{
 	public Hunter(double lp,double adamaged, double ad){
 		super("Hunter",lp,adamaged,ad);
 	}
-	
-
-
 	@Override
 	public void attack(ICard card) {
-		card.attackHunter(this);
+		if(card.isAlive() && this.isAlive()){
+			card.attackHunter(this);
+		}
 	}
 	@Override
 	public void attackDruid(Druid druid) {

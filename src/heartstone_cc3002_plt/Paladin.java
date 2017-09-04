@@ -24,7 +24,9 @@ public class Paladin extends AbstractCard{
 	
 	@Override
 	public void attack(ICard card) {
-		card.attackPaladin(this);
+		if(card.isAlive() && this.isAlive()){
+			card.attackPaladin(this);
+		}
 		
 	}
 	@Override

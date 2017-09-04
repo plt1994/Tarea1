@@ -26,7 +26,9 @@ public class Knight extends AbstractCard{
 
 	@Override
 	public void attack(ICard card) {
-		card.attackKnight(this);
+		if(card.isAlive() && this.isAlive()){
+			card.attackKnight(this);
+		}
 	}
 	@Override
 	public void attackAssassin(Assassin assassin) {
