@@ -380,5 +380,29 @@ public class HeartStoneTest {
 		hun.attack(war);
 		assertEquals(war.getDR(),103.3,0.1);
 	}
+	@Test
+	public void testConstructor(){
+		ass=new Assassin("juan",100,0,10);
+		dru=new Druid("juan",100,0,10);
+		hea=new Healer("juan",100,0,10);
+		hun=new Hunter("juan",100,0,10);
+		kni=new Knight("juan",100,0,10);
+		mag=new Mage("juan",100,0,10);
+		pal=new Paladin("juan",100,0,10);
+		sha=new Shaman("juan",100,0,10);
+		war=new Warlock("juan",100,0,10);
+	}
+	@Test
+	public void testConstructor1(){
+		ass=new Assassin(100,0,10);
+		dru=new Druid(100,0,10);
+		hea=new Healer(100,0,10);
+		hun=new Hunter(100,0,10);
+		kni=new Knight(100,0,10);
+		mag=new Mage(100,0,10);
+		pal=new Paladin(100,0,10);
+		sha=new Shaman(100,0,10);
+		war=new Warlock(100,0,10);
+	}
 
 }
